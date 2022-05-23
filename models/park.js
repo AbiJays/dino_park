@@ -21,19 +21,21 @@ Park.prototype.removeDinosaur = function (dinoSpecs) {
         }
     }
     return results;
+// better to use splice rather than looping through an array because splice refreshes before each iteration
 };
 
 // Most popular Dino
 Park.prototype.mostPopularDino = function () {
     let result = new Dinosaur("Pretend", "Pretend", 0);
-    for (dino of this.dinosaurs) {
+    for (let dino of this.dinosaurs) {
         if (dino.guestsAttractedPerDay > result.guestsAttractedPerDay) {
             result = dino;
         }
     }
-    return results;jh
+    return results;
 };
-    // set variable to compare = 0
+// Assume: get a comparison running = create variable as mosty attractive and nominate the first dinosaur
+// set variable to compare = 0
     // loop through dinos in dino Array
     // for each dino visitors 
     //   if > variableToCompare replace variableToCompare

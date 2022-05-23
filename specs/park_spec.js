@@ -6,9 +6,34 @@ describe('Park', function() {
 
   let park;
 
-  beforeEach(function () {
+  let lilien1;
+  let lilien2;
+  let lilien3;
+ 
+  let colorad1;
+  let colorad2;
+  let colorad3;
+
+  let stauri1;
+  let stauri2;
+  let stauri3;
+  
+  beforeEach (function () {
     park = new Park("Triassic Park", 15)
-  })
+
+    lilien1 = new Dinosaur(("Liliensternus", "Carnivore", 100))
+    lilien2 = new Dinosaur(("Liliensternus", "Carnivore", 52))
+    lilien3 = new Dinosaur(("Liliensternus", "Carnivore", 43))
+    
+    colorad1 = new Dinosaur("Coloradisaurus", "Omnivorous", 41)
+    colorad2 = new Dinosaur("Coloradisaurus", "Omnivorous", 31)
+    colorad3 = new Dinosaur("Coloradisaurus", "Omnivorous", 23)
+
+    stauri1 = new Dinosaur("Staurikosaurus", "Carnivorous", 20)
+    stauri2 = new Dinosaur("Staurikosaurus", "Carnivorous", 20)
+    stauri3 = new Dinosaur("Staurikosaurus", "Carnivorous", 20)
+
+  });
 
   it('should have a name', function (){
     assert.strictEqual(park.name, "Triassic Park")
@@ -23,8 +48,8 @@ describe('Park', function() {
   });
 
   it('should be able to add a dinosaur to its collection', function () {
-    park.addDinosaur("Liliensternus", "Carnivore", 100);
-    park.addDinosaur("Liliensternus", "Carnivore", 100);
+    park.addDinosaur(lilien1);
+    park.addDinosaur(stauri1);
     assert.strictEqual(park.dinosaurs.length, 2)
   });
 
@@ -39,7 +64,7 @@ describe('Park', function() {
     park.addDinosaur("Liliensternus", "Carnivorous", 100);
     park.addDinosaur("Coloradisaurus", "Omnivorous", 50);
     park.addDinosaur("Staurikosaurus", "Carnivorous", 20);
-    assert.strictEqual(park.mostPopularDino(), "Liliensternus")
+    assert.strictEqual(park.mostPopularDino(), "Liliensternus", "Carnivorous", 100)
   });
 
   // it('should be able to find all dinosaurs of a particular species', function () {
